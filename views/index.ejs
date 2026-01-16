@@ -4,9 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chats</title>
+    <link rel="stylesheet" href="/style.css">
   </head>
+  
   <body>
     <h1>All Chats</h1>
+    <form method="GET"  action="/chats/new">
+        <button class="new">New chat</button>
+    </form>
     <%for(let chat of chats){%>
     <div>
       <div class="from">
