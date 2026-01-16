@@ -4,6 +4,9 @@ const mongoose = require("mongoose");
 const Chat = require("./models/chat.js");
 const path = require("path");
 
+const methodOverride = require("method-override");
+app.use(methodOverride("_method"));
+
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
@@ -61,6 +64,14 @@ app.get("/chats/:id/edit",async(req,res) => {
     res.render("edit",{chat});
 });
 
+//UPDATE ROUTE
+app.put("/chats/:id",async(req,res) =>{
+     let {id} = req.params;
+     let {msg : newMsg} = req.body;
+     let updatedChat = await Chat.findByIdAndUpdate(id,{msg : newMsg},{runValidators: true, new : true});
+     res.redirect("/chats");
+ 
+}); 
 
 app.get("/", (req, res) => {
     res.send("root is working fine bro")
