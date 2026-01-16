@@ -109,3 +109,89 @@ button:hover {
     opacity: 0.8;
 }
 
+/* Edit Page Specific Styling */
+.edit-container {
+    background-color: white;
+    width: 90%;
+    max-width: 450px;
+    margin: 60px auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.edit-container h3 {
+    color: #075e54;
+    margin-bottom: 10px;
+}
+
+.edit-info {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.edit-container label {
+    display: block;
+    text-align: left;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #444;
+}
+
+.edit-container textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    resize: none; /* Prevents user from making the box messy */
+    box-sizing: border-box; /* Ensures padding doesn't break width */
+    margin-bottom: 20px;
+}
+
+.edit-container textarea:focus {
+    outline: none;
+    border-color: #25d366;
+    box-shadow: 0 0 5px rgba(37, 211, 102, 0.2);
+}
+
+.edit-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.update-btn {
+    background-color: #25d366;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.update-btn:hover {
+    background-color: #128c7e;
+}
+
+.cancel-link {
+    text-decoration: none;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.cancel-link:hover {
+    color: #ef5350;
+    text-decoration: underline;
+}

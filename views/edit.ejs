@@ -3,15 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit your chat</title>
+    <title>Edit Message</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <h3>Edit your chat </h3>
-    <p>This message is from <b><%= chat.from%></b> to <b><%= chat.to%></b> </p>
-    <form method="POST" action="/chats/<%= chat._id %>?_method=PUT">
-        <textarea name="msg" rows="10" ><%= chat.msg %></textarea>
-        <br>
-        <button>Update</button>
-    </form>
+    <div class="edit-container">
+        <h3>Edit Message Content</h3>
+        <p class="edit-info">
+            Modifying conversation between <br>
+            <strong><%= chat.from %></strong> and <strong><%= chat.to %></strong>
+        </p>
+
+        <form method="POST" action="/chats/<%= chat._id %>?_method=PUT">
+            <label for="msg">Message Text:</label>
+            <textarea id="msg" name="msg" rows="8" placeholder="Type updated message..."><%= chat.msg %></textarea>
+            
+            <div class="edit-actions">
+                <button class="update-btn">Update Message</button>
+                <a href="/chats" class="cancel-link">Cancel</a>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
