@@ -58,20 +58,27 @@ app.post("/chats", (req, res) => {
 });
 
 // Edit route
-app.get("/chats/:id/edit",async(req,res) => {
-    let {id} = req.params;
+app.get("/chats/:id/edit", async (req, res) => {
+    let { id } = req.params;
     let chat = await Chat.findById(id);
-    res.render("edit",{chat});
+    res.render("edit", { chat });
 });
 
 //UPDATE ROUTE
-app.put("/chats/:id",async(req,res) =>{
-     let {id} = req.params;
-     let {msg : newMsg} = req.body;
-     let updatedChat = await Chat.findByIdAndUpdate(id,{msg : newMsg},{runValidators: true, new : true});
-     res.redirect("/chats");
- 
-}); 
+app.put("/chats/:id", async (req, res) => {
+    let { id } = req.params;
+    let { msg: newMsg } = req.body;
+    let updatedChat = await Chat.findByIdAndUpdate(id, { msg: newMsg }, { runValidators: true, new: true });
+    res.redirect("/chats");
+
+});
+
+// DESTROY ROUTE
+app.delete("/chats/:id", async (req, res) => {
+    let { id } = req.params;
+    let DeleteChat = await Chat.findByIdAndDelete(id);
+    res.redirect("/chats");
+});
 
 app.get("/", (req, res) => {
     res.send("root is working fine bro")
