@@ -3,15 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat</title>
+    <title>New Chat</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <h1>Write new chat</h1>
-    <form method="POST" action="/chats">
-        <input placeholder="Who are you" name="from">
-        <textarea name="msg">Write your message here...</textarea>
-        <input placeholder="add receiver" name="to">
-        <button>Create Chat</button>
-    </form>
+    <div class="new-chat-container">
+        <h3>Start New Conversation</h3>
+        
+        <form method="POST" action="/chats">
+            <div class="input-group">
+                <label for="from">Your Name</label>
+                <input id="from" placeholder="Enter your name" name="from" required>
+            </div>
+
+            <div class="input-group">
+                <label for="to">Recipient Name</label>
+                <input id="to" placeholder="Who are you messaging?" name="to" required>
+            </div>
+
+            <div class="input-group">
+                <label for="msg">Message</label>
+                <textarea id="msg" name="msg" rows="5" placeholder="Type a message..."></textarea>
+            </div>
+
+            <button class="create-btn">Send Message</button>
+            <a href="/chats" class="back-link">← Back to all chats</a>
+        </form>
+    </div>
 </body>
 </html>
